@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 Puntos Doctrinales de la Iglesia</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .logo {
+            width: 300px;
+            margin-bottom: 5px;
+        }
+        .title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #0277bd;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 5px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-align: left;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 80px; /* Ajusta el tamaño de la imagen */
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 15px; /* Espaciado entre la imagen y el texto */
+        }
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="img/logoIgle.png" class="logo" alt="Logo de la Iglesia">
+        <div class="title">18 Puntos Doctrinales de la Iglesia</div>
+        <div class="grid" id="cards-container">
+            <!-- Aquí se generarán las tarjetas dinámicamente -->
+        </div>
+    </div>
+
+    <script>
+        // Definir los títulos e imágenes de los 18 puntos doctrinales
+        const doctrinas = [
+            { titulo: "LA IGLESIA", imagen: "img/img1.jpg" },
+            { titulo: "HAY UN SOLO DIOS", imagen: "img/img2.jpg" },
+            { titulo: "JESUCRISTO", imagen: "img/img3.jpg" },
+            { titulo: "EL ESPÍRITU SANTO", imagen: "img/img4.jpg" },
+            { titulo: "EL BAUTISMO EN AGUA", imagen: "img/img5.jpg" },
+            { titulo: "LA CENA DEL SEÑOR", imagen: "img/img6.jpg" },
+            { titulo: "LA RESURRECCIÓN DE JESUCRISTO", imagen: "img/img7.jpg" },
+            { titulo: "LA RESURRECCIÓN DE JUSTOS E INJUSTOS", imagen: "img/img8.jpg" },
+            { titulo: "EL RECOGIMIENTO DE LA IGLESIA Y EL MILENIO", imagen: "img/img9.jpg" },
+            { titulo: "EL JUICIO FINAL", imagen: "img/img10.jpg" },
+            { titulo: "LA SANIDAD DIVINA", imagen: "img/img11.jpg" },
+            { titulo: "LA SANTIDAD", imagen: "img/img12.jpg" },
+            { titulo: "MATRIMONIO", imagen: "img/img13.jpg" },
+            { titulo: "EL ESTADO Y LA IGLESIA", imagen: "img/img14.jpg" },
+            { titulo: "SERVICIO MILITAR", imagen: "img/img15.jpg" },
+            { titulo: "PECADO DE MUERTE", imagen: "img/img16.jpg" },
+            { titulo: "SISTEMA ECONÓMICO DE LA IGLESIA", imagen: "img/img17.jpg" },
+            { titulo: "EL CUERPO MINISTERIAL", imagen: "img/img18.jpg" }
+        ];
+
+        // Obtener el contenedor de las tarjetas
+        const container = document.getElementById("cards-container");
+
+        // Generar dinámicamente las tarjetas
+        doctrinas.forEach((doctrina, index) => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `
+                <img src="${doctrina.imagen}" alt="${doctrina.titulo}">
+                <div class="card-title">${index + 1}. ${doctrina.titulo}</div>
+            `;
+            card.onclick = () => window.location.href = `punto.html?id=${index + 1}`;
+            container.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>
+

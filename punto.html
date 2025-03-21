@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto Doctrinal</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e3f2fd;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #0277bd;
+        }
+
+        .content {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-top: 20px;
+            text-align: justify;
+            color: #555;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0277bd;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img id="doctrine-image" src="" alt="Imagen del artículo">
+        </div>
+        <div id="doctrine-title" class="title"></div>
+        <div id="doctrine-content" class="content"></div>
+        <a href="index.html" class="back-btn">Regresar</a>
+    </div>
+
+    <script>
+        // Definir los contenidos de cada punto doctrinal
+        const doctrinas = [
+            {
+                titulo: "LA IGLESIA",
+                imagen: "img/img1.jpg",
+                contenido: "Creemos que la Iglesia de nuestro Señor Jesucristo es una, universal e indivisible, formada por todos los hombres, sin distinción de nacionalidad, idioma, color o costumbres, que hayan aceptado a nuestro Señor Jesucristo como su Salvador y hayan sido bautizados en el cuerpo por el Espíritu Santo (1 Corintios 12:13).<br><br>Los vínculos que unen a los miembros de la Iglesia son el amor y la fe común y su estandarte o bandera es el Nombre de Jesucristo, ante cuyo emblema marcha gallardamente la Iglesia, imponente como ejércitos en orden (Cantares 6:10)."
+            },
+            {
+                titulo: "HAY UN SOLO DIOS",
+                imagen: "img/img2.jpg",
+                contenido: "Creemos que hay un sólo Dios que se ha manifestado al mundo en distintas formas a través de las edades y que especialmente se ha revelado como Padre en la Creación del Universo (Gn. 1:1; Jn. 1:1-3; Col. 1 :16-17), además que no existe ni puede existir otro Dios semejante a Él (Is. 43:10-12; 1 Tim. 3:16), también se ha manifestado como Hijo en la Redención de la humanidad, y como Espíritu Santo derramándose en los corazones de los creyentes. Estas tres manifestaciones de Dios no nos conducen a creer que existen tres Dioses, sino uno manifestado en tres formas.<br><br>Este Dios es el Creador de todo lo que existe, sea visible o invisible. Es eterno, Infinito en poder, Santo en su naturaleza, atributos y propósitos. El posee una Divinidad absoluta e indivisible; es Infinito en su Inmensidad, Inconcebible en su modo de ser e Indescriptible en su Esencia; conocido completamente sólo por sí mismo, porque una mente infinita solo se puede comprender por sí misma. No tiene cuerpo ni partes y por tanto está libre de todas las limitaciones. (Deu. 6:4; 2 Cor. 3:17; Jn. 4:24)."
+            },
+            {
+                titulo: "JESUCRISTO",
+                imagen: "img/img3.jpg",
+                contenido: "Creemos que Jesucristo nació milagrosamente del vientre de la virgen María, por obra del Espíritu Santo y que al mismo tiempo es el único y verdadero Dios (Romanos 9:5; 1 Juan 5:20). El mismo Dios del Antiguo Testamento tomó forma humana (Isaías 60:1-3). “Y aquel Verbo fue hecho carne, y habitó entre nosotros...” (Juan 1:14). “E indiscutiblemente, grande es el misterio de la piedad: Dios fue manifestado en carne, justificado en el Espíritu, visto de los ángeles, predicado a los gentiles, creído en el mundo, recibido arriba en gloria” (1 Timoteo 3:16).<br><br>Creemos que en Jesucristo se mezclaron en una forma perfecta e incomprensible los atributos divinos y la naturaleza humana. Se llama el Hijo del Hombre porque El nació de la Virgen Maria en cuyo vientre tomó forma de hombre, y adquirió así su naturaleza humana. Se llama el Hijo de Dios porque fue engendrado del Espíritu Santo y participó así de la naturaleza divina. Él era humano a través de Maria, en cuyo vientre tomó la forma de hombre. Él es divino por medio del Espíritu Santo quien engendró a Maria. Así, se llama el Hijo de Dios e Hijo del Hombre.<br><br>Por tanto creemos que Jesucristo es Dios “Porque en él habita corporalmente toda la plenitud de la Deidad”, (Colosenses 2:9). Y creemos que la Biblia da a conocer todos sus atributos. Es Padre Eterno, a la vez es un niño que nos es nacido (Isaías 9:6). Es Creador de todo (Colosenses 1: 16, 17; Isaías 45:18). Es Omnipresente (Juan 3:13; Deuteronomio 4:39). Hacía maravillas como Dios Todopoderoso (Lucas 5:24-26; Salmos 86:10). Tiene potestad sobre el mar (Marcos 4:37-39; Salmos 107:29,30). Es el mismo siempre (Hebreos 13:8; Salmos 102:27)."
+            },
+            {
+                titulo: "EL ESPÍRITU SANTO",
+                imagen: "img/img4.jpg",
+                contenido: "Creemos en el bautismo del Espíritu Santo, prometido por Dios en el Antiguo Testamento y derramado después de la glorificación del Señor Jesucristo, que es quien lo envía (Joel 2:28,29; Juan 7:37-39; 14:16-26; Hechos 2:1-4,16-18).<br><br>Creemos, además que la demostración de que una persona ha sido bautizada con el Espíritu Santo, son las nuevas lenguas o idiomas en que el creyente puede hablar y que ésta señal es también para nuestro tiempo.<br><br>Creemos también que el Espíritu Santo es potencia que permite testificar de Cristo (Hechos 1:8) y que sirve para la formación de un carácter cristiano más agradable a Dios (Galatas 5:22-25). El mismo Espíritu da dones a los hombres, que sirven para la edificación de la Iglesia (Romanos 12:6-8; 1 Corintios 12:1-12; Efesios 4:7-13). No aceptamos que haya en ningún hombre la facultad de impartir a otro algún don, pues “todas estas cosas las hace uno y el mismo Espíritu, repartiendo a cada uno en particular como él quiere.” (1 Corintios 12:11). “Pero a cada uno de nosotros fue dada la gracia conforme a la medida del don de Cristo” (Efesios 4:7).<br><br>Todos los miembros de la Iglesia Apostólica de la Fe en Cristo Jesús El Salvador deben buscar el Espíritu Santo y tratar de vivir constantemente en el Espíritu, como lo recomienda Romanos 8:5-16; Efesios 5:18; Colosenses 3:5."
+            },
+            {
+                titulo: "EL BAUTISMO EN AGUA",
+                imagen: "img/img5.jpg",
+                contenido: "Creemos en el bautismo en agua, por inmersión y en el Nombre de Jesucristo, el cual debe ser administrado por un ministro ordenado. El bautismo debe ser por inmersión, porque sólo así representa la muerte del hombre al pecado, que debe ser semejante a la muerte de Cristo (Romanos 6:1-5). Y en el Nombre de Jesucristo, porque ésta es la forma en que los apóstoles y ministros bautizaron en la edad primitiva de la Iglesia, según lo prueban las Sagradas Escrituras (Hechos 2:38; 8:16; 10:48; 19:6; 22:16)."
+            },
+            {
+                titulo: "LA CENA DEL SEÑOR",
+                imagen: "img/img6.jpg",
+                contenido: "Creemos en la práctica literal de la Cena del Señor que él mismo instituyó (Mateo 26:26-29; Marcos 14:22-25; Lucas 22:15-20; 1 Corintios 11:23-26).<br><br>En esta ordenanza se debe usar pan sin levadura, que representa el cuerpo sin pecado de nuestro Señor Jesucristo, y vino sin fermentar, que representa la Sangre de Cristo, que consumó nuestra redención. El objeto de esta ceremonia es conmemorar la muerte de nuestro Señor Jesucristo y anunciar el día en que regresará al mundo y al mismo tiempo para dar testimonio de la comunión que existe entre los creyentes. Ninguna persona debe participar de este acto si no es miembro fiel de la Iglesia y está en plena comunión, pues al hacerlo sin cumplir estas condiciones, no podrá discernir el cuerpo del Señor (1 Corintios 10:15-17; 11:27,28; 2 Corintios 13:5).<br><br>El Señor, al terminar de tomar una cena con sus apóstoles celebró un acto que de momento los maravilló y que fue el lavatorio de pies. Al terminar este acto, el Maestro explicó a sus discípulos el significado de él, y les recomendó que se lavasen los pies los unos a los otros. La Iglesia practica este acto en combinación con la Cena del Señor o indistintamente como un acto de humildad y confraternidad cristiana (1 Timoteo 5:10)."
+            },
+            {
+                titulo: "LA RESURRECCIÓN DE JESUCRISTO",
+                imagen: "img/img7.jpg",
+                contenido: "Creemos en la resurrección literal de nuestro Señor Jesucristo que se efectuó al tercer día de su muerte, como lo relatan los evangelistas (Mateo 27:60-64; Marcos 16:1- 20; Lucas 24: 1-12, 36-44; Juan 20:12-20). Esta resurrección había sido anunciada por los profetas (Isaías 53: 12) y es necesaria para nuestra esperanza y justificación (1 Corintios 15:20; Romanos 4:25)."
+            },
+            {
+                titulo: "LA RESURRECCIÓN DE JUSTOS E INJUSTOS",
+                imagen: "img/img8.jpg",
+                contenido: "Creemos que habrá una resurrección literal de los muertos en el Señor, en la cual serán cubiertos con un cuerpo glorificado y espiritual, con el cual vivirán para siempre en la presencia del Señor (Juan 5:29; Hechos 24: 15; 1 Tesalonicenses 4:16; Job 19:25-27; Salmos 17:15; 1 Corintios 15:35-54). Los cristianos que estén en pie, en el momento en que el Señor recoja a su Iglesia serán igualmente transformados y así irán a estar con el Señor para siempre en gloria (1 Tesalonicenses 4:18; 1 Corintios 15: 51,52).<br><br>Creemos también que habrá resurrección de injustos pero estos despertarán del sueño de la tumba sólo para ser juzgados y oír la dura sentencia que los hará herederos del fuego eterno (Mateo 25:26; Juan 5:29; Apocalipsis 20:12-15; Marcos 9:44; Daniel 12:2)."
+            },
+            {
+                titulo: "EL RECOGIMIENTO DE LA IGLESIA Y EL MILENIO",
+                imagen: "img/img9.jpg",
+                contenido: "Creemos que la Iglesia, compuesta por los muertos en el Señor y los fieles que estén sobre la tierra en el momento del Rapto, será levantada para ir a encontrar a su Señor en los aires y participar en las Bodas del Cordero.<br><br>Después vendrá con el Señor a la tierra para hacer el juicio de las naciones y reinar con Cristo mil años. Este período será precedido por la Gran Tribulación y la batalla del Armagedón, a la cual dará fin el Señor cuando descienda sobre el Monte de los Olivos con todos sus santos (1 Tesalonicenses 4:13-17; 1 Corintios 15:51-54; Filipenses 3:20,21; Isaías 65:17-25; Daniel 7:27; Miqueas 4:1-3; Zacarías 14:1-16; Mateo 5:5; Romanos 11:25- 27; Apocalipsis 20:1-5)."
+            },
+            {
+                titulo: "EL JUICIO FINAL",
+                imagen: "img/img10.jpg",
+                contenido: "Creemos que hay un juicio preparado en el cual participarán todos los hombres que hayan muerto sin Cristo y los que estén sobre la tierra en el tiempo de su verificación. Este juicio se efectuará al final del milenio y también se conoce con el nombre de Juicio del Trono Blanco.<br><br>La Iglesia no será juzgada en esta ocasión, sino que ella misma intervendrá en el juicio que se haga a todos los hombres de acuerdo con lo que está escrito en los libros que Dios tiene preparados. Al terminarse este juicio, los cielos y la tierra que hoy existen serán renovados por fuego y los fieles habitarán en la Nueva Jerusalén. La dispensación cristiana habrá terminado y entonces Dios volverá a ser todas las cosas en todos (Daniel 7:8-10, 14, 18; 1 Corintios 6:2,3; Romanos 2; 16; 14; 1 Corintios 5:10; Apocalipsis 20:5-15; 21:1-6)."
+            },
+            {
+                titulo: "LA SANIDAD DIVINA",
+                imagen: "img/img11.jpg",
+                contenido: "Creemos que Dios tiene poder para sanar todas nuestras dolencias físicas, si así es su voluntad y que la Sanidad Divina es un resultado del sacrificio de Cristo; pues El llevó nuestras enfermedades y sufrió nuestros dolores (Isaías 53:4). La sanidad del cuerpo se efectúa por una combinación de la fe del creyente y del poder del Nombre de Jesucristo que se invoca sobre el enfermo. El Señor Jesucristo prometió que los que creyeran en su Nombre pondrían las manos sobre los enfermos y estos sanarían (Marcos 16:18). Los enfermos deben ser ungidos con aceite en el Nombre de Jesucristo por ministros ordenados para que el Señor cumpla sus promesas (Juan 14:13; Salmos 103:1- 4; Lucas 9:1-3; 1 Corintios 12:9; Santiago 5:14-16).<br><br>Creemos que la Sanidad Divina se obtiene por la fe y que en caso de que algún hermano tenga necesidad de someterse a los cuidados y ministraciones de la ciencia médica, los demás no deben criticarlo, sino considerarse a sí mismos y guardarse de encontrar condenación con lo que ellos mismos aprueban (Romanos 14:22). Recomendamos que los miembros y ministros de nuestra Iglesia se abstengan de lanzar críticas indebidas a la ciencia médica, cuyos adelantos nadie puede negar y que se originan en la habilidad que Dios ha dado a los hombres para ir descubriendo los secretos del funcionamiento del organismo humano. Al mismo tiempo, los exhortamos a que no se opongan a las campañas de higiene, vacunación y limpieza que sean iniciadas por el gobierno, sino que, por lo contrario, colaboren decididamente en los lugares donde sea posible."
+            },
+            {
+                titulo: "LA SANTIDAD",
+                imagen: "img/img12.jpg",
+                contenido: "Creemos que todos los miembros del cuerpo de Cristo deben ser santos, es decir, apartados de todo pecado y consagrados al servicio de Dios. Por esta razón deben abstenerse de toda clase de prácticas, diversiones e inmundicias de carne y de espíritu (Levítico 19:2; 2 Corintios 7:1; Efesios 5:26,27; 1 Tesalonicenses 4:3,4; 2 Timoteo 2:21; Hebreos 12:14; 1 Pedro 1:16).<br><br>Sin embargo en la práctica de la santidad, creemos que debe evitarse toda clase de extremismos, ascetismos y privaciones que tienen cierta reputación de sabiduría, en culto voluntario y humildad y en duro trato de la carne, la cual es sombra de lo por venir, mas el cuerpo es de Cristo (Colosenses 2: 17,23). En lo que respecta a alimentos, sabiendo que “todo lo que Dios creo es bueno, y nada es de desecharse, si se toma con acción de gracias” (1 Timoteo 4:4)."
+            },
+            {
+                titulo: "MATRIMONIO",
+                imagen: "img/img13.jpg",
+                contenido: "Creemos que el matrimonio es sagrado, pues fue establecido desde el principio y es honroso en todos (Génesis 2:21-24; Mateo 19:1-5; Hebreos 13:4). Los matrimonios deben verificarse de acuerdo con las leyes de los países respectivos y luego solemnizarse en la Iglesia según la práctica aprobada. Las parejas que no hayan legalizado su unión y deseen bautizarse, deben cumplir primeramente con los requisitos de las leyes civiles.<br><br>Creemos que el matrimonio es una unión que debe perdurar mientras viven los dos cónyuges. Al morir uno de ellos, el otro está libre para casarse y no peca si lo hace en el Señor (Romanos 7:1-3; 1 Corintios 7:39).<br><br>Creemos además, que los matrimonios deben verificarse exclusivamente entre miembros fieles. Ningún ministro deberá casar a un miembro de la iglesia con una persona inconversa. Los miembros que estando en plena comunión se casaren con una persona inconversa, deberán ser juzgados por los pastores.<br><br>No se permitirán matrimonios que tengan parentesco familiar; la Biblia tampoco aprueba el matrimonio entre dos hombres, el cuál es vergonzoso y condenable (Rom. 1:26-28; 1 Cor. 6:9).<br><br>En cuanto al divorcio, la Biblia enseña que solamente se puede dar por causa de inmoralidad sexual (Dt. 24:1-2; Mt. 19:7-9; Mr. 10:2-9; Lc. 16:18). Disuelto el matrimonio (por la causa anterior), podrá casarse con otra persona, siempre y cuando el hecho hubiere sido comprobado.<br><br>En el caso de dos que ya están juntos y uno de ellos no es creyente; pero consiente en apoyar el matrimonio civil, el que es creyente podrá ser bautizado."
+            },
+            {
+                titulo: "EL ESTADO Y LA IGLESIA",
+                imagen: "img/img14.jpg",
+                contenido: "Creemos en la separación del Estado y la Iglesia y que ninguno debe intervenir en los asuntos del otro, pues aquí se cumple el precepto bíblico de dar lo que es de César a César y lo que es de Dios a Dios (Marcos 12:17).<br><br>Los cristianos deben tomar participación en actividades cívicas de acuerdo con su capacidad e inclinaciones políticas, pero siempre reflejando sus ideas personales y no las de la Iglesia, que siempre es neutral y tiene cabida para los hombres de todos los credos políticos. Al mismo tiempo, todos los cristianos, deben obedecer a las autoridades civiles y todas las leyes y disposiciones que de ellas emanen, siempre que no contradigan sus principios religiosos o los obliguen a hacer cosas en contra de su conciencia (Romanos 13: 1-9)."
+            },
+            {
+                titulo: "SERVICIO MILITAR",
+                imagen: "img/img15.jpg",
+                contenido: "La Iglesia Apostólica de la Fe en Cristo Jesús El Salvador, reconoce al gobierno humano como de ordenación Divina (Romanos 13: 1-2) y al hacerlo así, exhorta a sus miembros a que afirmen su lealtad a su patria. Siendo discípulos del Señor Jesucristo, es deber de todo cristiano obedecer sus preceptos y mandamientos que enseñan como sigue: “No resistáis al que es malo” (Mateo 5:39). “Seguid la paz con todos” (Hebreos 12:14). También (Romanos 12:19; Mateo 26:52; Santiago 5:6; Apocalipsis 13:10).Por estas Escrituras, se cree y se interpreta que los seguidores de nuestro Señor Jesucristo no deben destruir propiedades ajenas o quitar vidas humanas.<br><br>Se considera un pecado, que después de haber recibido el conocimiento de la verdad, haber sido hechos nuevas criaturas en Cristo Jesús, participar en acciones o actos diferentes a aquellos recomendados por la Divina Palabra de Dios (Hebreos 6:4-9; 10:26, 27).<br><br>Por lo tanto, se aconseja a todos los miembros que de acuerdo al dictamen de su conciencia, sirvan libremente a su patria, en tiempo de paz o de guerra, y prestar servicio, no importando cuán duro o peligroso sea en todas las capacidades NO COMBATIENTES. La Doctrina enseña que se ore porque tengamos siempre hombres de Dios como gobernantes y orar por ellos para que tengan siempre la sabiduría Divina y para que como nación, seamos guardados fuera de la guerra, con honor y vivir en paz continuamente (1 Timoteo 2:1-3)."
+            },
+            {
+                titulo: "PECADO DE MUERTE",
+                imagen: "img/img16.jpg",
+                contenido: "Creemos, a la luz de la Palabra de Dios, que hay pecado de muerte y que si este es cometido en los términos que expresa la misma Biblia, se pierde el derecho a la salvación (Mateo 12:31,32; Romanos 6:23; Hebreos 10:20, 27; 1 Juan 5:16,17). Por tanto, recomendamos que todos los fieles se abstengan de dar oído a doctrinas en que se promete seguridad eterna al cristiano sin importar su conducta, y la idea de que “una vez salvo, siempre salvo,” pues la Biblia enseña que es posible ser reprobado y se necesita permanecer fiel hasta el fin (Romanos 2:6-10; 1 Corintios 9:26,27)."
+            },
+            {
+                titulo: "SISTEMA ECONÓMICO DE LA IGLESIA",
+                imagen: "img/img17.jpg",
+                contenido: "Creemos que el sistema que la Biblia enseña para la obtención de fondos necesarios para el cumplimiento de la obra es el de diezmos y ofrendas y que debe ser practicado por ministros y creyentes igualmente (Génesis 28:22; Malaquias 3:10; Mateo 23:23; Lucas 6:38; Hechos 11:27,30; 1 Corintios 9:3-14; 16:1,2; 2 Corintios 8:1-16; 9:6-12; 11:7-9; 1 Timoteo 5:17,18; 6:17-19; Gálatas 6:6-10; Filipenses 4:10-12,15-19; Hebreos 13:16).<br><br>Sabiendo que la obra de Dios no tan sólo tiene aspecto espiritual, sino también material, creemos que es necesario reglamentar la manera en que se adquieran y distribuyan los fondos necesarios para responder a las necesidades materiales de la obra. "
+            },
+            {
+                titulo: "EL CUERPO MINISTERIAL",
+                imagen: "img/img18.jpg",
+                contenido: "Creemos que el ministerio es un llamamiento de Dios y que el Espíritu Santo confiere a cada ministro la facultad de servir a la Iglesia en distintas capacidades y con distintos dones, cuyas manifestaciones son todas para edificación del Cuerpo de Cristo (Romanos 12:6-8; 1 Corintios 12:5-11; Efesios 4:11,12).<br><br>Creemos también que, aunque el llamamiento al ministerio es de origen Divino, la Palabra de Dios contiene suficientes enseñanzas sobre los requisitos que debe llenar la persona que vaya a servir en el ministerio y que corresponde a los gobiernos eclesiásticos debidamente organizados examinar a los candidatos al ministerio y determinar cuándo son dignos de aprobación, y la tarea a que se deben dedicar (Hechos 1:23-26; 6:1-3; 1 Timoteo 3:1-lo; 4:14; 5:22; Tito 1:5-9).<br><br>Creemos además, que el Espíritu Santo usa al ministro en distintas formas, según las necesidades de la obra de Dios y la capacidad y disposición personal del ministro. Nadie puede ser colocado en una posición más elevada que aquella a que se haga merecedor (1 Timoteo 3: 13; Romanos 12:3).<br><br>Creemos que el Presbiterio es el cargo más elevado en el ministerio y que a quienes lo ocupan, se les debe dar muestras especiales de consideración y respeto, sin menoscabo de los que ocupan posiciones de menor responsabilidad."
+            }
+            // Agregar los otros puntos doctrinales aquí...
+        ];
+
+        // Obtener el ID desde la URL
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get('id')) - 1;
+
+        // Cargar el contenido dinámico si el ID es válido
+        if (id >= 0 && id < doctrinas.length) {
+            document.getElementById("doctrine-title").textContent = doctrinas[id].titulo;
+            document.getElementById("doctrine-content").innerHTML = doctrinas[id].contenido;  // Usar innerHTML para permitir etiquetas HTML
+            document.getElementById("doctrine-image").src = doctrinas[id].imagen;
+        } else {
+            document.getElementById("doctrine-title").textContent = "Error";
+            document.getElementById("doctrine-content").textContent = "Contenido no encontrado.";
+        }
+    </script>
+</body>
+
+</html>
