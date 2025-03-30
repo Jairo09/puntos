@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>18 Puntos Doctrinales de la Iglesia Apostólica</title>
+    <title>18 Puntos Doctrinales de la Iglésia Apostólica</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -12,27 +13,32 @@
             background-color: #e3f2fd;
             color: #333;
         }
+
         .container {
             max-width: 1000px;
             margin: 50px auto;
             text-align: center;
         }
+
         .logo {
             width: 300px;
             margin-bottom: 5px;
         }
+
         .title {
             font-size: 2em;
             font-weight: bold;
             color: #0277bd;
             margin-bottom: 20px;
         }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
         }
+
         .card {
             display: flex;
             align-items: center;
@@ -44,28 +50,46 @@
             transition: transform 0.2s;
             text-align: left;
         }
+
         .card:hover {
             transform: scale(1.05);
         }
+
         .card img {
-            width: 80px; /* Ajusta el tamaño de la imagen */
+            width: 80px;
+            /* Ajusta el tamaño de la imagen */
             height: 80px;
             border-radius: 8px;
             object-fit: cover;
-            margin-right: 15px; /* Espaciado entre la imagen y el texto */
+            margin-right: 15px;
+            /* Espaciado entre la imagen y el texto */
         }
+
         .card-title {
             font-size: 1.2em;
             font-weight: bold;
             flex: 1;
         }
+
+        .description {
+            font-size: 1.5em;
+            /* Tamaño de letra más grande */
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            /* Separación más notable entre la descripción y el grid */
+            color: #333;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <img src="img/logoIgle.png" class="logo" alt="Logo de la Iglesia">
-        <div class="title">18 Puntos Doctrinales de la Iglesia</div>
+        <div class="title">18 Puntos Doctrinales de la Iglésia Apostólica</div>
+        <div class="description">Doctrina y credo de la Iglésia Apostólica de la fe en Cristo Jesús El
+            Salvador.</div>
         <div class="grid" id="cards-container">
             <!-- Aquí se generarán las tarjetas dinámicamente -->
         </div>
@@ -111,5 +135,5 @@
     </script>
 
 </body>
-</html>
 
+</html>
